@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brother's Fashion</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+    }
+
+    .top-bar{
+      background:#000;
+      color:#fff;
+      text-align:center;
+      padding:10px;
+      font-size:14px;
+    }
+
+    header{
+      background:#fff;
+      padding:15px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 2px 10px rgba(0,0,0,.1);
+    }
+
+    .logo{
+      height:50px;
+    }
+
+    .hero{
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:40px;
+      margin-bottom:10px;
+    }
+
+    .hero p{
+      color:#666;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      background:#000;
+      color:#fff;
+      padding:12px 25px;
+      text-decoration:none;
+      border-radius:5px;
+    }
+
+    .products{
+      padding:20px;
+    }
+
+    .products h2{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:10px;
+      padding:15px;
+      margin-bottom:15px;
+      box-shadow:0 0 10px rgba(0,0,0,.1);
+    }
+
+    .card img{
+      width:100%;
+      border-radius:10px;
+    }
+
+    .price{
+      color:green;
+      font-size:22px;
+      margin:10px 0;
+    }
+
+    .order-btn{
+      display:block;
+      text-align:center;
+      background:black;
+      color:white;
+      padding:10px;
+      text-decoration:none;
+      border-radius:5px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#000;
+      color:white;
+      margin-top:30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="top-bar">
+  FREE DELIVERY ON ORDERS OVER ৳999
+</div>
+
+<header>
+  <img src="images/logo.png" class="logo">
+</header>
+
+<section class="hero">
+  <h1>STYLE MEETS COMFORT</h1>
+  <p>Premium Quality Clothing</p>
+
+  <a href="product.html" class="btn">SHOP NOW</a>
+</section>
+
+<section class="products">
+
+  <h2>FEATURED PRODUCTS</h2>
+
+  <div class="card">
+    <img src="images/product1.jpg">
+    <h3>Brown Stripe Polo T-Shirt</h3>
+    <div class="price">৳690</div>
+    <a href="product.html" class="order-btn">
+      ORDER NOW
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="images/product2.jpg">
+    <h3>Premium Mauve Shirt</h3>
+    <div class="price">৳790</div>
+    <a href="product.html" class="order-btn">
+      ORDER NOW
+    </a>
+  </div>
+
+</section>
+
+<footer>
+  <p>Brother's Fashion</p>
+  <p>01863974902</p>
+  <p>Chandgaon, Chattogram</p>
+</footer>
+
+</body>
+</html>
