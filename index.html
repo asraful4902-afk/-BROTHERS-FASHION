@@ -456,18 +456,15 @@
                         <label class="form-label">Full Address *</label>
                         <input type="text" id="cust-address" class="form-input" placeholder="House / Road / Area / District" required>
                     </div>
-                    <button type="submit" class="btn-block">CONFIRM ORDER VIA WHATSAPP 📲</button>
+                    <button type="submit" id="submit-btn" class="btn-block">CONFIRM ORDER 🛍️</button>
                 </form>
             </div>
         </div>
 
         <!-- 4. SUCCESS VIEW -->
         <div id="view-success" class="view-section">
-            <div style="text-align:center; padding:40px 16px;">
-                <div style="font-size:50px; color:green;">✓</div>
-                <h2>ORDER PLACED SUCCESSFULLY!</h2>
-                <p style="margin-top:8px; font-size:14px;">ধন্যবাদ! আপনার অর্ডারটি গ্রহণ করা হয়েছে।</p>
-                <button class="btn-block" onclick="switchView('view-home')">Continue Shopping</button>
+            <div id="success-box" style="text-align:center; padding:30px 16px;">
+                <!-- Dynamic Content Here -->
             </div>
         </div>
 
@@ -490,8 +487,10 @@
 
     <script>
         // Configuration
-        const WHATSAPP_NUMBER = "8801781717241"; // 👈 আপনার হোয়াটসঅ্যাপ নম্বর সেট করা হয়েছে
-        const GOOGLE_SCRIPT_URL = ""; // 👈 গুগল শিটের ইউআরএল বানিয়ে থাকলে এখানে বসাতে পারেন
+        const WHATSAPP_NUMBER = "8801781717241"; 
+        
+        // 🚨 নিচের কোটেশনের ভেতরে আপনার গুগল শিটের অ্যাপ স্ক্রিপ্ট ইউআরএল দিন
+        const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE"; 
 
         let currentOrder = {
             product: "Brown Stripe Polo T-Shirt",
@@ -527,12 +526,16 @@
         function handleOrderSubmit(e) {
             e.preventDefault();
             
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.innerText = "Processing...";
+            submitBtn.disabled = true;
+
             const name = document.getElementById('cust-name').value;
             const phone = document.getElementById('cust-phone').value;
             const address = document.getElementById('cust-address').value;
 
-            // Send Data to Google Sheets (if URL configured)
-            if (GOOGLE_SCRIPT_URL !== "") {
+            // 1. Send Data to Google Sheets
+            if (GOOGLE_SCRIPT_URL !== "" && GOOGLE_SCRIPT_URL !== "YOUR_GOOGLE_SCRIPT_URL_HERE") {
                 fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -544,12 +547,12 @@
                         product: currentOrder.product,
                         size: currentOrder.size,
                         price: currentOrder.price,
-                        date: new Date().toLocaleString()
+                        date: new Date().toLocaleString('bn-BD', { timeZone: 'Asia/Dhaka' })
                     })
                 });
             }
 
-            // Format & Send WhatsApp Message
+            // 2. Format Message
             const message = `🛍️ *NEW ORDER - BROTHER'S FASHION*\n\n` +
                 `*Product:* ${currentOrder.product}\n` +
                 `*Size:* ${currentOrder.size}\n` +
@@ -562,8 +565,25 @@
             const encodedMessage = encodeURIComponent(message);
             const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
-            // Open WhatsApp
+            // Try opening WhatsApp
             window.open(waUrl, '_blank');
+
+            // Render Success UI
+            document.getElementById('success-box').innerHTML = `
+                <div style="font-size:45px; color:#27ae60;">✓</div>
+                <h2>অর্ডার সফলভাবে জমা হয়েছে!</h2>
+                <p style="margin:8px 0; font-size:13px; color:#555;">
+                    আপনার অর্ডারের তথ্য ডাটাবেজে সংরক্ষণ করা হয়েছে। হোয়াটসঅ্যাপ না থাকলে বা কোনো সমস্যা হলে সরাসরি আমাদের সাথে যোগাযোগ করুন:
+                </p>
+                <div style="display:flex; flex-direction:column; gap:8px; margin-top:15px;">
+                    <a href="tel:01781717241" style="background:#111; color:#fff; padding:12px; text-decoration:none; border-radius:6px; font-weight:700; font-size:12px;">📞 সরাসরি কল দিন (01781717241)</a>
+                    <a href="sms:01781717241?body=${encodedMessage}" style="background:#27ae60; color:#fff; padding:12px; text-decoration:none; border-radius:6px; font-weight:700; font-size:12px;">💬 নরমাল SMS পাঠান</a>
+                </div>
+                <button class="btn-block" style="margin-top:20px;" onclick="location.reload()">আবার কেনাকাটা করুন</button>
+            `;
+
+            submitBtn.innerText = "CONFIRM ORDER 🛍️";
+            submitBtn.disabled = false;
             switchView('view-success');
         }
     </script>
