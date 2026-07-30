@@ -1,49 +1,155 @@
  <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Brother's Fashion - Order</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brother's Fashion</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+        }
+
+        .top-bar{
+            background:#000;
+            color:#fff;
+            text-align:center;
+            padding:10px;
+            font-size:14px;
+        }
+
+        header{
+            background:#fff;
+            padding:15px;
+            text-align:center;
+        }
+
+        .logo{
+            width:220px;
+            max-width:90%;
+        }
+
+        .hero{
+            text-align:center;
+            padding:40px 20px;
+        }
+
+        .hero h1{
+            font-size:48px;
+            margin-bottom:10px;
+        }
+
+        .hero p{
+            color:#666;
+            margin-bottom:20px;
+        }
+
+        .btn{
+            display:inline-block;
+            background:#000;
+            color:#fff;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+        .products{
+            padding:20px;
+        }
+
+        .products h2{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .card{
+            background:#fff;
+            border-radius:10px;
+            padding:15px;
+            margin-bottom:20px;
+            box-shadow:0 0 10px rgba(0,0,0,.1);
+        }
+
+        .card img{
+            width:100%;
+            border-radius:10px;
+        }
+
+        .price{
+            color:green;
+            font-size:24px;
+            margin:10px 0;
+        }
+
+        .order-btn{
+            display:block;
+            text-align:center;
+            background:#000;
+            color:#fff;
+            padding:10px;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+        footer{
+            background:#000;
+            color:#fff;
+            text-align:center;
+            padding:20px;
+            margin-top:20px;
+        }
+    </style>
 </head>
-<body style="font-family:Arial; padding:20px;">
 
-<h1>Brother's Fashion</h1>
-<h2>Order Confirmation</h2>
+<body>
 
-<form>
-    <label>Full Name:</label><br>
-    <input type="text" placeholder="Enter your name"><br><br>
+<div class="top-bar">
+    FREE DELIVERY ON ORDERS OVER ৳999
+</div>
 
-    <label>Phone Number:</label><br>
-    <input type="tel" placeholder="01XXXXXXXXX"><br><br>
+<header>
+    <img src="images/logo.png" alt="Brother's Fashion" class="logo">
+</header>
 
-    <label>Full Address:</label><br>
-    <textarea placeholder="Enter your address"></textarea><br><br>
+<section class="hero">
+    <h1>STYLE MEETS COMFORT</h1>
+    <p>Premium Quality Clothing</p>
 
-    <label>Product Name:</label><br>
-    <input type="text"><br><br>
+    <a href="product.html" class="btn">SHOP NOW</a>
+</section>
 
-    <label>Size:</label><br>
-    <select>
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
-        <option>XL</option>
-    </select><br><br>
+<section class="products">
 
-    <label>Quantity:</label><br>
-    <input type="number" value="1"><br><br>
+    <h2>FEATURED PRODUCTS</h2>
 
-    <button type="submit">Confirm Order</button>
-</form>
+    <div class="card">
+        <img src="images/product1.jpg" alt="Product">
+        <h3>Brown Stripe Polo T-Shirt</h3>
+        <p class="price">৳690</p>
+        <a href="product.html" class="order-btn">ORDER NOW</a>
+    </div>
 
-<hr>
+    <div class="card">
+        <img src="images/product2.jpg" alt="Product">
+        <h3>Premium Mauve Shirt</h3>
+        <p class="price">৳790</p>
+        <a href="product.html" class="order-btn">ORDER NOW</a>
+    </div>
 
-<p>
-ধন্যবাদ! আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে।<br>
-Brother's Fashion টিম শীঘ্রই আপনার সাথে যোগাযোগ করবে।
-</p>
+</section>
+
+<footer>
+    <p>Brother's Fashion</p>
+    <p>01863974902</p>
+    <p>Sanowara Abasik, Chandgaon, Chattogram</p>
+</footer>
 
 </body>
-</html> 
-<a href="order.html">
-  <button>ORDER NOW</button>
-</a>
+</html>
