@@ -3,71 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track Order - Brother's Fashion</title>
+    <title>Brother's Fashion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">B</div>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
-        </nav>
-        <div class="search-cart">
-            <input type="text" placeholder="Search...">
-            <a href="#">Cart</a>
-        </div>
+
+    <header>
+        <h1>Brother's Fashion</h1>
+        <p>Style Meets Comfort</p>
     </header>
 
-    <main class="track-order-container">
-        <h2>TRACK YOUR ORDER</h2>
-        <form class="track-form">
-            <label for="order-id">Enter your Order ID to track your order</label>
-            <input type="text" id="order-id" placeholder="e.g. BF1025">
-            <button type="submit" class="track-btn">TRACK ORDER</button>
-        </form>
+    <section class="hero">
+        <img src="images/banner.jpg" alt="Banner">
+        <br><br>
+        <button onclick="location.href='products.html'">
+            Shop Now
+        </button>
+    </section>
 
-        <div class="order-result">
-            <h3>ORDER FOUND!</h3>
-            <p><strong>Order ID:</strong> #BF1025</p>
-            <p><strong>Order Date:</strong> 22 May 2025</p>
+    <section class="features">
+        <div>Premium Quality</div>
+        <div>Fast Delivery</div>
+        <div>Secure Payment</div>
+        <div>24/7 Support</div>
+    </section>
 
-            <div class="status-timeline">
-                <h3>ORDER STATUS</h3>
-                <div class="timeline-step completed">
-                    <span class="step-icon">✓</span>
-                    <div class="step-info">
-                        <h4>Order Placed</h4>
-                        <p>22 May 2025, 10:30 AM</p>
-                        <p>Your order has been placed successfully.</p>
-                    </div>
-                </div>
-                <div class="timeline-step completed">
-                    <span class="step-icon">✓</span>
-                    <div class="step-info">
-                        <h4>Order Confirmed</h4>
-                        <p>22 May 2025, 11:15 AM</p>
-                        <p>Your order has been confirmed.</p>
-                    </div>
-                </div>
-                <div class="timeline-step completed">
-                    <span class="step-icon">✓</span>
-                    <div class="step-info">
-                        <h4>On The Way</h4>
-                        <p>23 May 2025, 09:00 AM</p>
-                        <p>Your order is on the way.</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <span class="step-icon"></span>
-                    <div class="step-info">
-                        <h4>Delivered</h4>
-                        <p>Expected: 24 May 2025</p>
-                        <p>Your order will be delivered soon.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 </body>
 </html>
