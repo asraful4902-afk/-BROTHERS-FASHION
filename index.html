@@ -1,91 +1,73 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brother's Fashion</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
+    <title>Track Order - Brother's Fashion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Top Announcement Bar -->
-    <div class="top-bar">
-        FREE DELIVERY ON ORDERS OVER ৳999
-    </div>
-
-    <!-- Header Navigation -->
     <header class="navbar">
-        <div class="menu-icon" id="menuBtn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="logo">
-            <!-- আপনার লোগো এখানে যুক্ত করুন -->
-            <h2>BROTHERS FASHION</h2>
-        </div>
-        <div class="nav-icons">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
+        <div class="logo">B</div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+        </nav>
+        <div class="search-cart">
+            <input type="text" placeholder="Search...">
+            <a href="#">Cart</a>
         </div>
     </header>
 
-    <!-- Hero Section with Cover Photo -->
-    <section class="hero-section">
-        <!-- আপনার কভার ছবি এখানে যুক্ত করুন -->
-        <div class="cover-photo">
-            <h3>STYLE MEETS COMFORT</h3>
-            <p>PREMIUM QUALITY CLOTHING</p>
-            <a href="#products" class="btn">SHOP NOW</a>
-        </div>
-    </section>
+    <main class="track-order-container">
+        <h2>TRACK YOUR ORDER</h2>
+        <form class="track-form">
+            <label for="order-id">Enter your Order ID to track your order</label>
+            <input type="text" id="order-id" placeholder="e.g. BF1025">
+            <button type="submit" class="track-btn">TRACK ORDER</button>
+        </form>
 
-    <!-- Featured Products -->
-    <section id="products" class="product-section">
-        <h2>FEATURED PRODUCTS</h2>
-        <div class="product-grid">
-            
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="product1.jpg" alt="Brown Stripe Polo T-Shirt">
-                <h3>Brown Stripe Polo T-Shirt</h3>
-                <p>Price: ৳690</p>
-                <button class="order-btn" onclick="orderNow('Brown Stripe Polo T-Shirt', 690)">ORDER NOW</button>
+        <div class="order-result">
+            <h3>ORDER FOUND!</h3>
+            <p><strong>Order ID:</strong> #BF1025</p>
+            <p><strong>Order Date:</strong> 22 May 2025</p>
+
+            <div class="status-timeline">
+                <h3>ORDER STATUS</h3>
+                <div class="timeline-step completed">
+                    <span class="step-icon">✓</span>
+                    <div class="step-info">
+                        <h4>Order Placed</h4>
+                        <p>22 May 2025, 10:30 AM</p>
+                        <p>Your order has been placed successfully.</p>
+                    </div>
+                </div>
+                <div class="timeline-step completed">
+                    <span class="step-icon">✓</span>
+                    <div class="step-info">
+                        <h4>Order Confirmed</h4>
+                        <p>22 May 2025, 11:15 AM</p>
+                        <p>Your order has been confirmed.</p>
+                    </div>
+                </div>
+                <div class="timeline-step completed">
+                    <span class="step-icon">✓</span>
+                    <div class="step-info">
+                        <h4>On The Way</h4>
+                        <p>23 May 2025, 09:00 AM</p>
+                        <p>Your order is on the way.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <span class="step-icon"></span>
+                    <div class="step-info">
+                        <h4>Delivered</h4>
+                        <p>Expected: 24 May 2025</p>
+                        <p>Your order will be delivered soon.</p>
+                    </div>
+                </div>
             </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="product2.jpg" alt="Premium Mauve Shirt">
-                <h3>Premium Mauve Shirt</h3>
-                <p>Price: ৳790</p>
-                <button class="order-btn" onclick="orderNow('Premium Mauve Shirt', 790)">ORDER NOW</button>
-            </div>
-
         </div>
-    </section>
-
-    <!-- Order Modal Form (Hidden by default) -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <h3>অর্ডার ফর্ম</h3>
-            <form id="checkoutForm">
-                <label for="name">নাম:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="address">ঠিকানা:</label>
-                <input type="text" id="address" name="address" required>
-
-                <label for="phone">ফোন নম্বর:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <button type="submit" class="btn">কনফার্ম অর্ডার</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Custom Script -->
-    <script src="script.js"></script>
+    </main>
 </body>
 </html>
