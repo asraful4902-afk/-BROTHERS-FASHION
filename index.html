@@ -6,6 +6,7 @@
     <title>Brother's Fashion</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,91 +22,70 @@
             <i class="fa-solid fa-bars"></i>
         </div>
         <div class="logo">
-            <!-- আপনার লোগোর নাম বা ছবি এখানে দিন -->
-            <h2>B<span>OTHER'S</span> FASHION</h2>
+            <!-- আপনার লোগো এখানে যুক্ত করুন -->
+            <h2>BROTHERS FASHION</h2>
         </div>
         <div class="nav-icons">
-            <i class="fa-solid fa-magnifying-glass" id="searchBtn"></i>
-            <i class="fa-solid fa-cart-shopping" id="cartBtn"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
         </div>
     </header>
 
-    <!-- Side Navigation Menu (For Mobile) -->
-    <div class="sidebar" id="sidebar">
-        <div class="close-btn" id="closeBtn">&times;</div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Account</a></li>
-        </ul>
-    </div>
-
-    <!-- Hero Banner Section -->
+    <!-- Hero Section with Cover Photo -->
     <section class="hero-section">
-        <div class="hero-content">
-            <h1>STYLE MEETS COMFORT</h1>
+        <!-- আপনার কভার ছবি এখানে যুক্ত করুন -->
+        <div class="cover-photo">
+            <h3>STYLE MEETS COMFORT</h3>
             <p>PREMIUM QUALITY CLOTHING</p>
-            <a href="#products" class="btn-primary">SHOP NOW &rarr;</a>
-        </div>
-        <div class="hero-image">
-            <!-- আপনার পছন্দমতো কভার ছবির ডিরেক্ট লিংক এখানে দিন -->
-            <img src="https://via.placeholder.com/600x400?text=Cover+Photo" alt="Cover Photo" id="coverImage">
-        </div>
-    </section>
-
-    <!-- Feature Badges -->
-    <section class="features">
-        <div class="feature-card">
-            <i class="fa-solid fa-award"></i>
-            <div>
-                <h4>PREMIUM QUALITY</h4>
-                <p>Best quality products</p>
-            </div>
-        </div>
-        <div class="feature-card">
-            <i class="fa-solid fa-truck-fast"></i>
-            <div>
-                <h4>FAST DELIVERY</h4>
-                <p>Quick & safe delivery</p>
-            </div>
+            <a href="#products" class="btn">SHOP NOW</a>
         </div>
     </section>
 
     <!-- Featured Products -->
-    <section class="products-section" id="products">
+    <section id="products" class="product-section">
         <h2>FEATURED PRODUCTS</h2>
         <div class="product-grid">
             
             <!-- Product 1 -->
             <div class="product-card">
-                <!-- প্রডাক্ট ১-এর ছবির লিংক বসান -->
-                <img src="https://via.placeholder.com/300x350?text=Polo+T-Shirt" alt="Brown Stripe Polo T-Shirt">
+                <img src="product1.jpg" alt="Brown Stripe Polo T-Shirt">
                 <h3>Brown Stripe Polo T-Shirt</h3>
-                <p class="price">৳690</p>
+                <p>Price: ৳690</p>
                 <button class="order-btn" onclick="orderNow('Brown Stripe Polo T-Shirt', 690)">ORDER NOW</button>
             </div>
 
             <!-- Product 2 -->
             <div class="product-card">
-                <!-- প্রডাক্ট ২-এর ছবির লিংক বসান -->
-                <img src="https://via.placeholder.com/300x350?text=Mauve+Shirt" alt="Premium Mauve Shirt">
+                <img src="product2.jpg" alt="Premium Mauve Shirt">
                 <h3>Premium Mauve Shirt</h3>
-                <p class="price">৳790</p>
+                <p>Price: ৳790</p>
                 <button class="order-btn" onclick="orderNow('Premium Mauve Shirt', 790)">ORDER NOW</button>
             </div>
 
         </div>
     </section>
 
-    <!-- Bottom Navigation Bar -->
-    <nav class="bottom-nav">
-        <a href="#" class="active"><i class="fa-solid fa-house"></i><span>Home</span></a>
-        <a href="#products"><i class="fa-solid fa-bag-shopping"></i><span>Shop</span></a>
-        <a href="#"><i class="fa-solid fa-list"></i><span>Categories</span></a>
-        <a href="#"><i class="fa-solid fa-user"></i><span>Account</span></a>
-    </nav>
+    <!-- Order Modal Form (Hidden by default) -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3>অর্ডার ফর্ম</h3>
+            <form id="checkoutForm">
+                <label for="name">নাম:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="address">ঠিকানা:</label>
+                <input type="text" id="address" name="address" required>
 
+                <label for="phone">ফোন নম্বর:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <button type="submit" class="btn">কনফার্ম অর্ডার</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
 </html>
