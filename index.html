@@ -3,232 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BROTHER'S FASHION</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f6f8; color: #333; padding-bottom: 70px; }
-        header { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        .logo { font-weight: bold; font-size: 18px; letter-spacing: 1px; text-align: center; }
-        .hero { background: #e9ecef; padding: 25px 20px; text-align: center; margin-bottom: 20px; }
-        .shop-btn { background: #111; color: #fff; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin-top: 10px; font-weight: bold; }
-        .features { display: flex; justify-content: space-around; background: #fff; padding: 15px 10px; margin-bottom: 20px; text-align: center; font-size: 12px; }
-        .container { max-width: 600px; margin: 0 auto; padding: 0 15px; }
-        .section-title { font-size: 16px; margin-bottom: 15px; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
-        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .product-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: relative; }
-        .product-badge { position: absolute; top: 8px; left: 8px; background: #111; color: #fff; font-size: 10px; padding: 3px 6px; border-radius: 3px; font-weight: bold; }
-        .product-img { width: 100%; height: 180px; object-fit: cover; background: #eee; }
-        .product-info { padding: 12px; }
-        .product-title { font-size: 13px; font-weight: 600; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .product-price { font-weight: bold; color: #111; font-size: 14px; margin-bottom: 10px; }
-        .order-btn { width: 100%; background: #2b3a4a; color: #fff; border: none; padding: 8px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; display: flex; justify-content: center; align-items: center; gap: 5px; }
-        
-        .view-section { display: none; }
-        .view-section.active { display: block; }
-        
-        .product-detail-img { width: 100%; max-height: 350px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
-        .size-selector { display: flex; gap: 10px; margin: 15px 0; }
-        .size-btn { border: 1px solid #ccc; padding: 8px 15px; border-radius: 4px; background: #fff; cursor: pointer; font-weight: bold; }
-        .size-btn.active { border-color: #111; background: #111; color: #fff; }
-        
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
-        .btn-block { width: 100%; padding: 12px; font-size: 15px; background: #111; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
-        
-        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; justify-content: space-around; padding: 10px 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 1000; }
-        .nav-item { text-align: center; color: #666; font-size: 11px; text-decoration: none; cursor: pointer; }
-        .nav-item i { font-size: 18px; display: block; margin-bottom: 2px; }
-        .nav-item.active { color: #111; font-weight: bold; }
-    </style>
+    <title>Brother's Fashion</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <i class="fas fa-bars"></i>
-        <div class="logo">BROTHER'S<br><span style="font-size:10px; color:#666;">FASHION</span></div>
-        <div><i class="fas fa-search" style="margin-right:15px;"></i><i class="fas fa-shopping-bag"></i></div>
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        FREE DELIVERY ON ORDERS OVER ৳999
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="menu-icon" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="logo">
+            <!-- আপনার লোগোর নাম বা ছবি এখানে দিন -->
+            <h2>B<span>OTHER'S</span> FASHION</h2>
+        </div>
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass" id="searchBtn"></i>
+            <i class="fa-solid fa-cart-shopping" id="cartBtn"></i>
+        </div>
     </header>
 
-    <!-- 1. HOME VIEW -->
-    <div id="view-home" class="view-section active">
-        <div class="hero">
-            <button class="shop-btn" onclick="switchView('view-home')">SHOP NOW &rarr;</button>
-        </div>
-        <div class="features">
-            <div><i class="fas fa-shield-alt"></i><br><strong>PREMIUM QUALITY</strong></div>
-            <div><i class="fas fa-rocket"></i><br><strong>FAST DELIVERY</strong></div>
-        </div>
-        <div class="container">
-            <div class="section-title">FEATURED PRODUCTS</div>
-            <div class="product-grid">
-                
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <span class="product-badge">NEW</span>
-                    <img src="https://via.placeholder.com/200" class="product-img" alt="T-Shirt">
-                    <div class="product-info">
-                        <div class="product-title">Brown Stripe Polo T-Shirt</div>
-                        <div class="product-price">৳690</div>
-                        <button class="order-btn" onclick="selectProduct('Brown Stripe Polo T-Shirt', 690)">ORDER NOW <i class="fas fa-shopping-cart"></i></button>
-                    </div>
-                </div>
+    <!-- Side Navigation Menu (For Mobile) -->
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeBtn">&times;</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Account</a></li>
+        </ul>
+    </div>
 
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <span class="product-badge">NEW</span>
-                    <img src="https://via.placeholder.com/200" class="product-img" alt="Shirt">
-                    <div class="product-info">
-                        <div class="product-title">Premium Mauve Shirt</div>
-                        <div class="product-price">৳790</div>
-                        <button class="order-btn" onclick="selectProduct('Premium Mauve Shirt', 790)">ORDER NOW <i class="fas fa-shopping-cart"></i></button>
-                    </div>
-                </div>
+    <!-- Hero Banner Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>STYLE MEETS COMFORT</h1>
+            <p>PREMIUM QUALITY CLOTHING</p>
+            <a href="#products" class="btn-primary">SHOP NOW &rarr;</a>
+        </div>
+        <div class="hero-image">
+            <!-- আপনার পছন্দমতো কভার ছবির ডিরেক্ট লিংক এখানে দিন -->
+            <img src="https://via.placeholder.com/600x400?text=Cover+Photo" alt="Cover Photo" id="coverImage">
+        </div>
+    </section>
 
+    <!-- Feature Badges -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fa-solid fa-award"></i>
+            <div>
+                <h4>PREMIUM QUALITY</h4>
+                <p>Best quality products</p>
             </div>
         </div>
-    </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <h4>FAST DELIVERY</h4>
+                <p>Quick & safe delivery</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- 2. PRODUCT VIEW -->
-    <div id="view-product" class="view-section">
-        <div class="container" style="padding-top:20px;">
-            <img src="https://via.placeholder.com/400" class="product-detail-img" alt="Product Detail">
-            <h2 id="p-title">Product Name</h2>
-            <h3 id="p-price" style="color:#111; margin: 10px 0;">৳0</h3>
+    <!-- Featured Products -->
+    <section class="products-section" id="products">
+        <h2>FEATURED PRODUCTS</h2>
+        <div class="product-grid">
             
-            <label><strong>Select Size:</strong></label>
-            <div class="size-selector">
-                <button class="size-btn active" onclick="chooseSize('M', this)">M</button>
-                <button class="size-btn" onclick="chooseSize('L', this)">L</button>
-                <button class="size-btn" onclick="chooseSize('XL', this)">XL</button>
+            <!-- Product 1 -->
+            <div class="product-card">
+                <!-- প্রডাক্ট ১-এর ছবির লিংক বসান -->
+                <img src="https://via.placeholder.com/300x350?text=Polo+T-Shirt" alt="Brown Stripe Polo T-Shirt">
+                <h3>Brown Stripe Polo T-Shirt</h3>
+                <p class="price">৳690</p>
+                <button class="order-btn" onclick="orderNow('Brown Stripe Polo T-Shirt', 690)">ORDER NOW</button>
             </div>
 
-            <button class="btn-block" onclick="switchView('view-order-form')" style="margin-top:20px;">BUY IT NOW</button>
-        </div>
-    </div>
-
-    <!-- 3. ORDER FORM VIEW -->
-    <div id="view-order-form" class="view-section">
-        <div class="container" style="padding-top:20px;">
-            <h3>Checkout / ক্যাশ অন ডেলিভারি</h3>
-            <p style="font-size:12px; color:#666; margin-bottom:15px;">অর্ডার নিশ্চিত করতে আপনার সঠিক তথ্য দিন</p>
-            
-            <div style="background:#fff; padding:15px; border-radius:6px; margin-bottom:15px; font-size:14px;">
-                <p><strong>প্রোডাক্ট:</strong> <span id="summary-name">Product</span></p>
-                <p><strong>সাইজ:</strong> <span id="summary-size">M</span></p>
-                <p><strong>মূল্য:</strong> ৳<span id="summary-price">0</span></p>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <!-- প্রডাক্ট ২-এর ছবির লিংক বসান -->
+                <img src="https://via.placeholder.com/300x350?text=Mauve+Shirt" alt="Premium Mauve Shirt">
+                <h3>Premium Mauve Shirt</h3>
+                <p class="price">৳790</p>
+                <button class="order-btn" onclick="orderNow('Premium Mauve Shirt', 790)">ORDER NOW</button>
             </div>
 
-            <form onsubmit="handleOrderSubmit(event)">
-                <div class="form-group">
-                    <label>আপনার নাম *</label>
-                    <input type="text" id="cust-name" required placeholder="আপনার পুরো নাম লিখুন">
-                </div>
-                <div class="form-group">
-                    <label>মোবাইল নম্বর *</label>
-                    <input type="tel" id="cust-phone" required placeholder="১১ ডিজিটের মোবাইল নম্বর">
-                </div>
-                <div class="form-group">
-                    <label>সম্পূর্ণ ঠিকানা *</label>
-                    <textarea id="cust-address" required placeholder="জেলা, থানা ও এলাকার নাম লিখুন"></textarea>
-                </div>
-                <button type="submit" id="submit-btn" class="btn-block">CONFIRM ORDER 🛍️</button>
-            </form>
         </div>
-    </div>
+    </section>
 
-    <!-- 4. SUCCESS VIEW -->
-    <div id="view-success" class="view-section">
-        <div id="success-box" style="text-align:center; padding:50px 16px;">
-            <i class="fas fa-check-circle" style="font-size: 60px; color: #28a745; margin-bottom: 15px;"></i>
-            <h2>অর্ডার সফল হয়েছে!</h2>
-            <p style="margin-top:10px; color:#555;">ধন্যবাদ! আপনার অর্ডারটি আমরা পেয়েছি। খুব শীঘ্রই আমরা আপনার সাথে যোগাযোগ করব।</p>
-            <button class="shop-btn" onclick="switchView('view-home')" style="margin-top:20px;">আরও কেনাকাটা করুন</button>
-        </div>
-    </div>
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="#" class="active"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="#products"><i class="fa-solid fa-bag-shopping"></i><span>Shop</span></a>
+        <a href="#"><i class="fa-solid fa-list"></i><span>Categories</span></a>
+        <a href="#"><i class="fa-solid fa-user"></i><span>Account</span></a>
+    </nav>
 
-    <!-- BOTTOM NAV -->
-    <div class="bottom-nav">
-        <div class="nav-item active" onclick="switchView('view-home')"><i class="fas fa-home"></i>Home</div>
-        <div class="nav-item" onclick="switchView('view-home')"><i class="fas fa-store"></i>Shop</div>
-        <div class="nav-item" onclick="switchView('view-order-form')"><i class="fas fa-shopping-cart"></i>Checkout</div>
-    </div>
-
-    <script>
-        // Configuration
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw84-y-fezL4WNXTE_pphY1HviiLxua2Botwd9KXY-XBThQ1jzvTdBjYJpRyx7LJ2j2/exec"; 
-
-        let currentOrder = {
-            product: "Brown Stripe Polo T-Shirt",
-            price: 690,
-            size: "M"
-        };
-
-        function switchView(viewId) {
-            document.querySelectorAll('.view-section').forEach(view => view.classList.remove('active'));
-            document.getElementById(viewId).classList.add('active');
-            window.scrollTo(0,0);
-        }
-
-        function selectProduct(name, price) {
-            currentOrder.product = name;
-            currentOrder.price = price;
-
-            document.getElementById('p-title').innerText = name;
-            document.getElementById('p-price').innerText = '৳' + price;
-            document.getElementById('summary-name').innerText = name;
-            document.getElementById('summary-price').innerText = price;
-
-            switchView('view-product');
-        }
-
-        function chooseSize(size, element) {
-            currentOrder.size = size;
-            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
-            element.classList.add('active');
-            document.getElementById('summary-size').innerText = size;
-        }
-
-        function handleOrderSubmit(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submit-btn');
-            submitBtn.innerText = "Processing...";
-            submitBtn.disabled = true;
-
-            const name = document.getElementById('cust-name').value;
-            const phone = document.getElementById('cust-phone').value;
-            const address = document.getElementById('cust-address').value;
-
-            // Send Data to Google Sheets
-            if (GOOGLE_SCRIPT_URL !== "") {
-                fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        name: name,
-                        phone: phone,
-                        address: address,
-                        product: currentOrder.product,
-                        size: currentOrder.size,
-                        price: currentOrder.price,
-                        date: new Date().toLocaleString('bn-BD', { timeZone: 'Asia/Dhaka' })
-                    })
-                }).then(() => {
-                    switchView('view-success');
-                    submitBtn.innerText = "CONFIRM ORDER 🛍️";
-                    submitBtn.disabled = false;
-                }).catch(() => {
-                    switchView('view-success');
-                    submitBtn.innerText = "CONFIRM ORDER 🛍️";
-                    submitBtn.disabled = false;
-                });
-            } else {
-                switchView('view-success');
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
